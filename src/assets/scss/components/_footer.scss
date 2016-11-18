@@ -1,0 +1,45 @@
+$footer-height: 166px;
+$footer-padding: 20px;
+$footer-height-total: $footer-height + $footer-padding;
+
+@include breakpoint(medium up) {
+  // Sticky footer styles
+  * {
+    margin: 0;
+  }
+  html, body {
+    height: 100%;
+  }
+  #page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -$footer-height-total;
+  }
+  #page-wrap:after {
+    content: "";
+    display: block;
+  }
+  footer, #page-wrap:after {
+    height: $footer-height-total;
+  }
+}
+
+footer {
+  background-color: $black;
+  color: #fff;
+  min-height: rem-calc($footer-height-total);
+  padding: 20px 0;
+
+  .contact i {
+    margin-right: 20px;
+  }
+  .footer-address {
+    i {
+      float: left;
+      line-height: 20px;
+    }
+    span {
+      float: left;
+    }
+  }
+}
