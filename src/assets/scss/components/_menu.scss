@@ -1,4 +1,23 @@
 #main-menu {
   display: inline-block;
   margin: 0 auto;
+
+  a, li.active a {
+    // color: $white;
+    color: $black;
+  }
+}
+.sticky {
+  width: 100%;
+}
+
+.menu-wrap {
+  // background-color: rgba($white, 0.8);
+  background-color: $white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  border-bottom: 1px solid $light-gray;
 }

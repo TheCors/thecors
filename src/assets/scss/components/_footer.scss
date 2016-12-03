@@ -1,5 +1,5 @@
-$footer-height: 166px;
-$footer-padding: 20px;
+$footer-height: rem-calc(166px);
+$footer-padding: rem-calc(20px);
 $footer-height-total: $footer-height + $footer-padding;
 
 @include breakpoint(medium up) {
@@ -25,18 +25,18 @@ $footer-height-total: $footer-height + $footer-padding;
 }
 
 footer {
-  background-color: $black;
+  background: #3f3f3f;
   color: #fff;
   min-height: rem-calc($footer-height-total);
   padding: 20px 0;
 
   .contact i {
-    margin-right: 20px;
+    margin-right: rem-calc(20px);
   }
   .footer-address {
     i {
       float: left;
-      line-height: 20px;
+      line-height: rem-calc(20px);
     }
     span {
       float: left;
