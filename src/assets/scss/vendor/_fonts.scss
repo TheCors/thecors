@@ -1,0 +1,11 @@
+/* Custom Fonts */
+@font-face {
+  font-family: 'GeosansLightRegular'; /* obtained from dafont.com */
+  src: url('../../assets/fonts/geosanslight-webfont.eot');
+  src: url('../../assets/fonts/geosanslight-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../../assets/fonts/geosanslight-webfont.woff2') format('woff2'),
+       url('../../assets/fonts/geosanslight-webfont.woff') format('woff'),
+       url('../../assets/fonts/geosanslight-webfont.svg#webfontRXuQFCWS') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
