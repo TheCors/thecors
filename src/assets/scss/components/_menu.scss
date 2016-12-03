@@ -11,6 +11,10 @@
   width: 100%;
 }
 
+.no-js .title-bar {
+  display: none;
+}
+
 .menu-wrap {
   // background-color: rgba($white, 0.8);
   background-color: $white;
