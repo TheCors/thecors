@@ -7,7 +7,7 @@ $footer-height-total: $footer-height + $footer-padding;
   * {
     margin: 0;
   }
-  html, body {
+  html, body, .loading-wrapper {
     height: 100%;
   }
   #page-wrap {
@@ -32,7 +32,7 @@ footer {
 
   .footer-links {
     a {
-      color: $white; 
+      color: $white;
     }
   }
 }

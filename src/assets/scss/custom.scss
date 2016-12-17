@@ -1,30 +1,82 @@
 body {
-  padding-top: rem-calc(70px);
+  padding-top: rem-calc(40px);
+
+  @include breakpoint(medium up) {
+    padding-top: rem-calc(70px);
+  }
 }
 
-.home-bg {
+main {
+  .content {
+    background: $white;
+    // padding: rem-calc(0 0 $global-padding 0);
+    padding: rem-calc($global-padding-double 0);
+  }
+  .secondary-content {
+    background: $light-gray;
+    padding: rem-calc($global-padding-double 0);
+  }
+}
+
+.card {
+  height: inherit;
+}
+
+.full-width-bg {
+  height: 300px;
+  @include breakpoint(medium up) {
+    height: 600px;
+  }
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  &.rooms-bg {
+    background-image: url('/assets/img/rooms.jpg');
+  }
+
+  .text {
+    padding: 3rem;
+    color: $white;
+    font-size: rem-calc(48);
+    @include breakpoint(medium up) {
+      font-size: rem-calc(100);
+    }
+    font-family: 'Dancing Script', cursive;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .inner {
+    background: rgba(0, 0, 0, 0.2);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+}
+.full-height-bg {
   margin: 0;
-  background-image: url('/assets/img/home.jpg');
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
   position: relative;
 
-  // &:before {
-  //   content: '';
-  //   position: absolute;
-  //   top: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   background-image: linear-gradient(to bottom right, #333, $light-gray);
-  //   opacity: .6;
-  // }
+  &.home-bg {
+    background-image: url('/assets/img/home.jpg');
+  }
+
+  &.rooms-bg {
+    background-image: url('/assets/img/rooms.jpg');
+  }
 
   .inner {
     background: rgba(0, 0, 0, 0.2);
-    position: absolute;
+    position: relative;;
     top: 0;
     left: 0;
     width: 100%;
@@ -34,6 +86,19 @@ body {
   }
 }
 
-main {
-  padding: rem-calc(40px 0);
+@include breakpoint(small only) {
+  .tabs .tabs-title {
+    width: 100%;
+  }
 }
+
+// &:before {
+//   content: '';
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   left: 0;
+//   background-image: linear-gradient(to bottom right, #333, $light-gray);
+//   opacity: .6;
+// }

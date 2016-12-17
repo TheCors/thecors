@@ -1,0 +1,19 @@
+<p><strong>Check in from 3pm, checkout from 12pm</strong></p>
+<ul class="tabs" data-tabs id="tariff-tabs">
+  <li class="tabs-title is-active">
+    <a href="#bnb" aria-selected="true">B&B <small>(per night,per room)</small></a>
+  </li>
+  <li class="tabs-title">
+    <a href="#dinner-bnb">Dinner + B&B <small>(per night / per room)</small></a>
+  </li>
+</ul>
+<div class="tabs-content" data-tabs-content="tariff-tabs">
+  <div class="tabs-panel is-active" id="bnb">
+    {{> bnb_tariff }}
+    {{> tariff_details }}
+  </div>
+  <div class="tabs-panel" id="dinner-bnb">
+    {{> dinner_bnb_tariff }}
+    {{> tariff_details }}
+  </div>
+</div>

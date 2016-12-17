@@ -1,31 +1,82 @@
-<header class="rooms-bg">
+<!-- <header class="full-height-bg rooms-bg">
   <div class="inner">
+  </div>
+</header> -->
+<header class="full-width-bg rooms-bg">
+  <div class="inner">
+    <h1 class="text">Rooms</h1>
     <div class="arrow bounce"></div>
   </div>
 </header>
-<main class="row">
-  <div class="small-12 columns">
-    <h1>Rooms</h1>
-    <p>Three rooms with a chic style, wait at the top of a beautiful double staircase, vintage William Morris wallpapers, bold colors, pretty fire places and the odd armoire. The rooms are ideal for those wanting to dine or simple savor the charms of Laugharne, don’t miss Laugharne for all things Dylan Thomas.</p>
-
-    <p>All three bedrooms have been totally refurbished (2016) and all have on suite facilities, they also include flat screen TV’s, tea making facilities, Nespresso machines and free WIFI.</p>
-
+<!-- <main class="row expanded"> -->
+<main class="text-center">
+  <section class="content row">
+    <div class="small-12 columns">
+      <h1>Rooms</h1>
+      <p class="lead">Three rooms with a chic style, wait at the top of a beautiful double staircase, vintage William Morris wallpapers, bold colors, pretty fire places and the odd armoire. The rooms are ideal for those wanting to dine or simply savor the charms of Laugharne, don’t miss Laugharne for all things Dylan Thomas.</p>
+    </div>
+  </section>
+  <section class="secondary-content row expanded">
     <div class="row">
-      <div class="small-12 medium-4 columns">
-        <h2>The Blue Room</h2>
-        <p>A garden facing double room on the first floor, lovely views of the garden through the Victorian shutter window.
-        The furniture is all stained pitched pine with a king size bed</p>
-      </div>
-      <div class="small-12 medium-4 columns">
-        <h2>The Jade Room</h2>
-        <p>A garden facing double room on the first floor, lovely views of the garden through the Victorian shutter window.
-        The double bed is an antique metal and brass with a free standing armoire in the room.</p>
-      </div>
-      <div class="small-12 medium-4 columns">
-        <h2>The Gold Room</h2>
-        <p>The larger of the three rooms is the Gold Room, with a double bed and spacious seating options. The bathroom is huge, with a corner bath and free standing shower, super soft towels, bath robes and luxury toiletry's.
-        The décor is modern with lots of metallic wallcoverings and contemporary artworks.</p>
+      <div class="small-12 columns">
+        <p class="lead">All three bedrooms have been totally refurbished (2016) and all have on suite facilities, they also include flat screen TV’s, tea making facilities, Nespresso machines and free WIFI.</p>
+        <hr class="small-4 small-centered columns"/>
       </div>
     </div>
-  </div>
+    <div class="row small-up-1 medium-up-3" data-equalizer data-equalize-on="medium">
+      <div class="column" data-equalizer-watch>
+        <!-- <img src="{{root}}assets/img/blue-room-1.jpg" alt="The Blue Room">
+        <h3>The Blue Room</h3>
+        <p>A garden facing double room on the first floor, lovely views of the garden through the Victorian shutter window.</p>
+        <p>The furniture is all stained pitched pine with a king size bed</p> -->
+        <div class="card">
+          <img src="{{root}}assets/img/blue-room-1.jpg" alt="The Blue Room">
+          <div class="card-section">
+            <h3>The Blue Room</h3>
+            <p>A garden facing double room on the first floor, lovely views of the garden through the Victorian shutter window.</p>
+            <p>The furniture is all stained pitched pine with a king size bed</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column" data-equalizer-watch>
+        <div class="card">
+          <img src="{{root}}assets/img/green-room-1.jpg" alt="The Jade Room">
+          <div class="card-section">
+            <h3>The Jade Room</h3>
+            <p>A garden facing double room on the first floor, lovely views of the garden through the Victorian shutter window.</p>
+            <p>The double bed is an antique metal and brass with a free standing armoire in the room.</p>
+          </div>
+        </div>
+        <!-- <img src="{{root}}assets/img/green-room-1.jpg" alt="The Jade Room">
+        <h3>The Jade Room</h3>
+        <p>A garden facing double room on the first floor, lovely views of the garden through the Victorian shutter window.</p>
+        <p>The double bed is an antique metal and brass with a free standing armoire in the room.</p> -->
+      </div>
+      <div class="column" data-equalizer-watch>
+        <div class="card">
+          <img src="{{root}}assets/img/blue-room-1.jpg" alt="The Blue Room">
+          <div class="card-section">
+            <h3>The Gold Room</h3>
+            <p>The larger of the three rooms is the Gold Room, with a double bed and spacious seating options. The bathroom is huge, with a corner bath and free standing shower, super soft towels, bath robes and luxury toiletry's.</p>
+            <p>The décor is modern with lots of metallic wallcoverings and contemporary artworks.</p>
+          </div>
+        </div>
+        <!-- <img src="{{root}}assets/img/blue-room-1.jpg" alt="The Blue Room">
+        <h3>The Gold Room</h3>
+        <p>The larger of the three rooms is the Gold Room, with a double bed and spacious seating options. The bathroom is huge, with a corner bath and free standing shower, super soft towels, bath robes and luxury toiletry's.</p>
+        <p>The décor is modern with lots of metallic wallcoverings and contemporary artworks.</p> -->
+      </div>
+      <div class="row">
+        <div class="small-12 columns">
+          <hr class="small-4 small-centered columns"/>
+          <p class="lead">All rooms have garden views with the exception of the Gold Room.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="content row small-12 columns">
+    <h3>Tariff</h3>
+    {{> tariff_content }}
+  </section>
 </main>
