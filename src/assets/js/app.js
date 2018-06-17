@@ -13,10 +13,17 @@ function showCorsIntroOnce() {
 
 $(document).foundation()
 $(document).ready(function() {
-  if ($('.image-gallery').length) {
-    lightGallery($('.image-gallery').get(0), {
+  var galleryEl = $('.image-gallery');
+  if (galleryEl.length) {
+    lightGallery(galleryEl.get(0), {
       selector: '.image-thumb',
     })
+  }
+  var copyrightEl = $('[data-copyright]')
+  if (copyrightEl.length) {
+    var dateToday = new Date(),
+    yearNow = dateToday.getFullYear();
+    copyrightEl.text('Copyright © ' + yearNow)
   }
 })
 
