@@ -1,0 +1,25 @@
+<div class="row">
+  <p><strong>Check-in from 3pm, checkout from 12pm</strong></p>
+  <div class="small-4 columns">
+    <ul class="tabs vertical" data-tabs id="tariff-tabs">
+      <li class="tabs-title is-active">
+        <a href="#bnb" aria-selected="true">B&B <small>(per night,per room)</small></a>
+      </li>
+      <li class="tabs-title">
+        <a href="#dinner-bnb">Dinner + B&B <small>(per night / per room)</small></a>
+      </li>
+    </ul>
+  </div>
+  <div class="small-8 columns">
+    <div class="tabs-content vertical" data-tabs-content="tariff-tabs">
+      <div class="tabs-panel is-active" id="bnb">
+        {{> bnb_tariff }}
+        {{> tariff_details }}
+      </div>
+      <div class="tabs-panel" id="dinner-bnb">
+        {{> dinner_bnb_tariff }}
+        {{> tariff_details }}
+      </div>
+    </div>
+  </div>
+</div>

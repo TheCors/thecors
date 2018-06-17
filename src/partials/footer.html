@@ -1,30 +1,47 @@
 <footer class="footer">
-  <div class="row">
-    <div class="small-3 columns text-center">
-      <p>Awards Logos here</p>
+  <div class="row text-center">
+    <div class="awards small-12 medium-4 columns">
+      {{> awards_links_left }}
+      {{> footer_widget }}
     </div>
-    <div class="small-6 columns text-center">
+    <div class="info small-12 medium-4 columns">
+      <p><strong>For reservations, enquires & information:</strong></p>
       <p class="footer-links">
-        <a href="https://www.facebook.com/thecors/">
-          <i class="fa fa-2x fa-fw fa-facebook-official" aria-hidden="true"></i>
+        <a class="facebook" href="https://www.facebook.com/thecors/">
+          <img src="{{root}}assets/img/footer/facebook.png" alt="Facebook">
         </a>
-        <a href="https://twitter.com/corsrestaurant">
-          <i class="fa fa-2x fa-fw fa-twitter" aria-hidden="true"></i>
+        <a class="twitter" href="https://twitter.com/corsrestaurant">
+          <img src="{{root}}assets/img/footer/twitter.png" alt="twitter">
         </a>
-        <a href="https://www.tripadvisor.co.uk/Restaurant_Review-g552054-d718551-Reviews-The_Cors_Country_House_Restaurant-Laugharne_Carmarthenshire_Wales.html">
-          <i class="fa fa-2x fa-fw fa-tripadvisor" aria-hidden="true"></i>
+        <a class="tripadvisor" href="https://www.tripadvisor.co.uk/Restaurant_Review-g552054-d718551-Reviews-The_Cors_Country_House_Restaurant-Laugharne_Carmarthenshire_Wales.html">
+          <img src="{{root}}assets/img/footer/tripadvisor.png" alt="tripadvisor">
         </a>
       </p>
-      <ul class="info no-bullet">
-        <li>For reservations, enquires, books & information:</li>
-        <li>Phone: 01994 427 219</li>
-        <li>Email: <a href="mailto:nick@thecors.co.uk">nick@thecors.co.uk</a></li>
-        <li>The Cors, Newbridge Road, Laugharne, Carmarthenshire, SA33 4SH</li>
+      <ul class="no-bullet">
+        <li>
+          <p>
+            The Cors,
+            <br>Newbridge Road,
+            <br>Laugharne,
+            <br>Carmarthenshire,
+            <br>SA33 4SH
+          </p>
+        </li>
+        <li>Call us: 01994 427 219</li>
+        <li><a href="mailto:nick@thecors.co.uk">Email us</a></li>
       </ul>
-      <p class="copywrite">Copyright © 2016</p>
     </div>
-    <div class="small-3 columns text-center">
-      <p>Awards Logos here</p>
+    <div class="awards small-12 medium-4 columns">
+      {{> awards_links_right }}
+      {{> footer_widget_right }}
+    </div>
+  </div>
+  <div class="bottom">
+    <div class="row">
+      <div class="small-12 columns">
+        <p class="float-left"><small><a href="http://chrislusted.co.uk">Website by Chris Lusted</a></small></p>
+        <p class="float-right"><small>Copyright © 2016</small></p>
+      </div>
     </div>
   </div>
 </footer>

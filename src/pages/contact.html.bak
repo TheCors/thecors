@@ -1,0 +1,27 @@
+<header class="full-width-bg contact-bg">
+  <div class="inner">
+    <h1 class="text">Contact us</h1>
+  </div>
+</header>
+<main>
+  <section class="content row">
+    <div class="small-12 columns">
+      <h1>Contact</h1>
+    </div>
+    <div class="small-12 medium-4 columns">
+      <p>
+        Nick Priestland
+        <br>The Cors,
+        <br>Newbridge Road,
+        <br>Laugharne,
+        <br>Carmarthenshire,
+        <br>SA33 4SH
+        <br>01994 4271 219
+        <br><a href="mailto:nick@thecors.co.uk">nick@thecors.co.uk</a>
+      </p>
+    </div>
+    <div class="small-12 medium-8 columns">
+      <div class="responsive-embed" id="cors-map"></div>
+    </div>
+  </section>
+</main>

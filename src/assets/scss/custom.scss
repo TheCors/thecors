@@ -6,20 +6,36 @@ body {
   }
 }
 
+@include breakpoint(small only) {
+  .reveal {
+    max-height: 200px;
+    overflow: scroll;
+  }
+}
+
 main {
   .content {
     background: $white;
-    // padding: rem-calc(0 0 $global-padding 0);
-    padding: rem-calc($global-padding-double 0);
-  }
-  .secondary-content {
-    background: $light-gray;
-    padding: rem-calc($global-padding-double 0);
+    overflow: hidden;
+    padding: rem-calc($global-padding 0);
+
+    @include breakpoint(medium up) {
+      padding: rem-calc($global-padding-double 0);
+    }
+
+    &.secondary {
+      background: $light-gray;
+    }
   }
 }
 
 .card {
   height: inherit;
+
+  &.highlight {
+    background: $light-gray;
+    // color: $white;
+  }
 }
 
 .full-width-bg {
@@ -34,6 +50,18 @@ main {
 
   &.rooms-bg {
     background-image: url('/assets/img/rooms.jpg');
+  }
+  &.contact-bg {
+    background-image: url('/assets/img/contact.jpg');
+  }
+  &.garden-bg {
+    background-image: url('/assets/img/garden.jpg');
+  }
+  &.dining-bg {
+    background-image: url('/assets/img/dining.jpg');
+  }
+  &.tariff-bg {
+    background-image: url('/assets/img/tariff.jpg');
   }
 
   .text {
@@ -58,6 +86,7 @@ main {
     text-align: center;
   }
 }
+
 .full-height-bg {
   margin: 0;
   background-position: top center;
@@ -67,11 +96,24 @@ main {
   position: relative;
 
   &.home-bg {
-    background-image: url('/assets/img/home.jpg');
+    background-image: url('/assets/img/home-2.jpg');
   }
 
   &.rooms-bg {
     background-image: url('/assets/img/rooms.jpg');
+  }
+
+  .text {
+    padding: 3rem;
+    color: $white;
+    font-size: rem-calc(48);
+    @include breakpoint(medium up) {
+      font-size: rem-calc(100);
+    }
+    font-family: 'Dancing Script', cursive;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .inner {

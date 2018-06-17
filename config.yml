@@ -19,6 +19,7 @@ UNCSS_OPTIONS:
 PATHS:
   # Path to dist folder
   dist: "dist"
+  build: "build" 
   # Paths to static assets that aren't images, CSS, or JavaScript
   assets:
     - "src/assets/**/*"
@@ -26,10 +27,21 @@ PATHS:
   # Paths to fonts
   fonts:
     - "src/fonts/*"
+    # lightGallery
+    - "bower_components/lightgallery.js/dist/fonts/lg.*"
+    # # - "bower_components/slick-carousel/slick/fonts"
+    # # - "bower_components/font-awesome/fonts"
   # Paths to Sass libraries, which can then be loaded with @import
   sass:
     - "bower_components/foundation-sites/scss"
     - "bower_components/motion-ui/src"
+    - "bower_components/motion-ui/src"
+    # Slick slider
+    # - "bower_components/slick-carousel/slick"
+    # Simple Lightbox
+    # - "bower_components/simplelightbox/dist"
+    # lightGallery
+    - "bower_components/lightgallery.js/src/sass"
     # Paths to font awesome
     - "bower_components/font-awesome/scss"
   # Paths to JavaScript libraries, which are combined into one file
@@ -42,25 +54,37 @@ PATHS:
     - "bower_components/foundation-sites/js/foundation.util.*.js"
     # Individual Foundation components
     # If you aren't using a component, just remove it from the list
-    - "bower_components/foundation-sites/js/foundation.abide.js"
-    - "bower_components/foundation-sites/js/foundation.accordion.js"
-    - "bower_components/foundation-sites/js/foundation.accordionMenu.js"
-    - "bower_components/foundation-sites/js/foundation.drilldown.js"
-    - "bower_components/foundation-sites/js/foundation.dropdown.js"
-    - "bower_components/foundation-sites/js/foundation.dropdownMenu.js"
+    # - "bower_components/foundation-sites/js/foundation.abide.js"
+    # - "bower_components/foundation-sites/js/foundation.accordion.js"
+    # - "bower_components/foundation-sites/js/foundation.accordionMenu.js"
+    # - "bower_components/foundation-sites/js/foundation.drilldown.js"
+    # - "bower_components/foundation-sites/js/foundation.dropdown.js"
+    # - "bower_components/foundation-sites/js/foundation.dropdownMenu.js"
     - "bower_components/foundation-sites/js/foundation.equalizer.js"
-    - "bower_components/foundation-sites/js/foundation.interchange.js"
-    - "bower_components/foundation-sites/js/foundation.magellan.js"
-    - "bower_components/foundation-sites/js/foundation.offcanvas.js"
-    - "bower_components/foundation-sites/js/foundation.orbit.js"
+    # - "bower_components/foundation-sites/js/foundation.interchange.js"
+    # - "bower_components/foundation-sites/js/foundation.magellan.js"
+    # - "bower_components/foundation-sites/js/foundation.offcanvas.js"
+    # - "bower_components/foundation-sites/js/foundation.orbit.js"
     - "bower_components/foundation-sites/js/foundation.responsiveMenu.js"
     - "bower_components/foundation-sites/js/foundation.responsiveToggle.js"
     - "bower_components/foundation-sites/js/foundation.reveal.js"
-    - "bower_components/foundation-sites/js/foundation.slider.js"
-    - "bower_components/foundation-sites/js/foundation.sticky.js"
-    - "bower_components/foundation-sites/js/foundation.tabs.js"
-    - "bower_components/foundation-sites/js/foundation.toggler.js"
-    - "bower_components/foundation-sites/js/foundation.tooltip.js"
+    # - "bower_components/foundation-sites/js/foundation.slider.js"
+    # - "bower_components/foundation-sites/js/foundation.sticky.js"
+    # - "bower_components/foundation-sites/js/foundation.tabs.js"
+    # - "bower_components/foundation-sites/js/foundation.toggler.js"
+    # - "bower_components/foundation-sites/js/foundation.tooltip.js"
+    # Slick slider
+    # - "bower_components/slick-carousel/slick/slick.js"
+    # Simple Lightbox
+    # - "bower_components/simplelightbox/dist/simple-lightbox.js"
+    # lightGallery
+    - "bower_components/lightgallery.js/dist/js/lightgallery.js"
+    - "bower_components/lg-thumbnail.js/src/lg-thumbnail.js"
+    # Pace
+    - "bower_components/PACE/pace.min.js"
+    # photoswipe
+    # - "bower_components/photoswipe/dist/photoswipe.min.js"
+
     # Paths to your own project code are here
     - "src/assets/js/!(app).js"
     - "src/assets/js/app.js"

@@ -1,4 +1,4 @@
-$footer-height: rem-calc(214px);
+$footer-height: rem-calc(296px);
 $footer-padding: rem-calc(20px);
 $footer-height-total: $footer-height + $footer-padding;
 
@@ -25,14 +25,107 @@ $footer-height-total: $footer-height + $footer-padding;
 }
 
 footer {
-  background: #3f3f3f;
-  color: #fff;
+  background: $darkest-gray;
+  color: $white;
+  font-size: rem-calc(14);
   min-height: $footer-height-total;
-  padding: rem-calc(20px 0);
+  padding: rem-calc($footer-padding 0);
 
-  .footer-links {
-    a {
-      color: $white;
+  @include breakpoint(small only) {
+    padding-bottom: 0;
+  }
+
+  .bottom {
+    @include breakpoint(small only) {
+      margin-top: rem-calc(20px);
+    }
+    background: #2e2e2e;
+    border-top: 1px solid $dark-gray;
+    padding: rem-calc(5px 0);
+
+    p {
+      margin: 0;
     }
   }
+
+  a {
+    color: #2db4ff;
+    transition: all .2s ease-in-out;
+
+    img {
+      transition: all .2s ease-in-out;
+    }
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+  }
+
+  .footer-links a {
+    color: $white;
+    display: inline-block;
+    height: rem-calc(28px);
+    width: rem-calc(36px);
+  }
+
+  .awards {
+    a {
+      @media screen and (min-width: 640px) and (max-width: 736px) {
+        margin-left: 0;
+      }
+
+      display: inline-block;
+      margin-left: rem-calc(10px);
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+
+    img {
+      @media screen and (min-width: 640px) and (max-width: 736px) {
+        margin-left: 0;
+        margin-bottom: rem-calc(15px);
+      }
+
+      margin-left: rem-calc(10px);
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+  }
+
+  @include breakpoint(small only) {
+    .info {
+      margin: rem-calc(20px 0 10px 0);
+    }
+  }
+}
+
+// trip advisor widget overrides
+.TA_cdsscrollingravenarrow {
+  @include breakpoint(small only) {
+    margin: 20px auto 0 auto;
+  }
+  margin: rem-calc(70px) auto 0 auto;
+  display: table;
+
+  #CDSSCROLLINGRAVE.narrow {
+    // @include breakpoint(medium down) {
+    //   // max-width: rem-calc(310px);
+    //   max-width: rem-calc(282px);
+    // }
+    max-width: rem-calc(232px);
+    min-width: rem-calc(162px) !important;
+    // width: auto !important;
+    display:table-cell;
+    vertical-align:middle;
+  }
+}
+.TA_certificateOfExcellence {
+  margin-top: rem-calc(20px);
+}
+#CDSWIDCOE {
+  margin: 0 auto !important;
 }

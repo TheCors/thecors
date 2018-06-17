@@ -4,6 +4,7 @@ import plugins  from 'gulp-load-plugins';
 import yargs    from 'yargs';
 import browser  from 'browser-sync';
 import gulp     from 'gulp';
+import rev      from 'gulp-rev';
 import panini   from 'panini';
 import rimraf   from 'rimraf';
 import sherpa   from 'style-sherpa';
@@ -72,12 +73,12 @@ function sass() {
     .pipe($.sass({
       includePaths: PATHS.sass
     })
-      .on('error', $.sass.logError))
+    .on('error', $.sass.logError))
     .pipe($.autoprefixer({
       browsers: COMPATIBILITY
     }))
     // Comment in the pipe below to run UnCSS in production
-    //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
+    // .pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
     .pipe($.if(PRODUCTION, $.cssnano()))
     .pipe($.if(!PRODUCTION, $.sourcemaps.write()))
     .pipe(gulp.dest(PATHS.dist + '/assets/css'))
@@ -89,7 +90,7 @@ function sass() {
 function javascript() {
   return gulp.src(PATHS.javascript)
     .pipe($.sourcemaps.init())
-    // .pipe($.babel({ignore: ['what-input.js']}))
+    .pipe($.babel({ignore: ['what-input.js']}))
     .pipe($.concat('app.js'))
     .pipe($.if(PRODUCTION, $.uglify()
       .on('error', e => { console.log(e); })
