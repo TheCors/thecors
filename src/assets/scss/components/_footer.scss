@@ -66,6 +66,10 @@ footer {
     display: inline-block;
     height: rem-calc(28px);
     width: rem-calc(36px);
+
+    &.tripadvisor {
+      margin-left: 5px;
+    }
   }
 
   .awards {
