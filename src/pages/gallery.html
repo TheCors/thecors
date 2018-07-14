@@ -1,67 +1,24 @@
-<header class="full-width-bg dining-bg">
+<header class="full-width-bg gallery-bg dining-bg">
   <div class="inner">
     <h1 class="text">Gallery</h1>
     <div class="arrow bounce show-for-medium"></div>
   </div>
 </header>
 <main>
-  <section class="row content">
-    <div class="small-12 columns">
-      <h1>Gallery</h1>
-      <p>Maybe some text here?</p>
-    </div>
-  </section>
   <section class="content secondary row expanded">
-    <div class="row small-up-2 large-up-5 image-gallery">
-      <div class="column column-block gallery">
-        <div class="image-thumb thumbnail" data-src="assets/img/slides/dining/restaurant-1.jpg">
-          <img src="assets/img/slides/dining/thumbs/restaurant-1.jpg" alt="The Cors Restaurant">
-          <div class="gallery-overlay">
-            <div class="overlay-item">
-              <i class="fa fa-2x fa-search-plus"></i>
+    <div class="row small-up-2 large-up-4 image-gallery-content">
+      {{#repeat 17}}
+        <div class="column column-block image-gallery">
+          <div class="image-thumb thumbnail" data-src="assets/img/slides/gallery/the_cors_{{@index}}.jpg">
+            <img src="assets/img/slides/gallery/thumbs/the_cors_{{@index}}.jpg" alt="The Cors Restaurant">
+            <div class="image-gallery-overlay">
+              <div class="overlay-item">
+                <i class="fa fa-2x fa-search-plus"></i>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="column column-block gallery">
-        <div class="image-thumb thumbnail" data-src="assets/img/slides/dining/restaurant-2.jpg">
-          <img src="assets/img/slides/dining/thumbs/restaurant-2.jpg" alt="The Cors Restaurant">
-          <div class="gallery-overlay">
-            <div class="overlay-item">
-              <i class="fa fa-2x fa-search-plus"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column column-block gallery">
-        <div class="image-thumb thumbnail" data-src="assets/img/slides/dining/restaurant-3.jpg">
-          <img src="assets/img/slides/dining/thumbs/restaurant-3.jpg" alt="The Cors Restaurant">
-          <div class="gallery-overlay">
-            <div class="overlay-item">
-              <i class="fa fa-2x fa-search-plus"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column column-block gallery">
-        <div class="image-thumb thumbnail" data-src="assets/img/slides/dining/restaurant-4.jpg">
-          <img src="assets/img/slides/dining/thumbs/restaurant-4.jpg" alt="The Cors Restaurant">
-          <div class="gallery-overlay">
-            <div class="overlay-item">
-              <i class="fa fa-2x fa-search-plus"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column column-block gallery">
-        <div class="image-thumb thumbnail" data-src="assets/img/slides/dining/restaurant-5.jpg">
-          <img src="assets/img/slides/dining/thumbs/restaurant-5.jpg" alt="The Cors Restaurant">
-          <div class="gallery-overlay">
-            <div class="overlay-item">
-              <i class="fa fa-2x fa-search-plus"></i>
-            </div>
-          </div>
-        </div>
-      </div>
+      {{/repeat}}
+    </div>
   </section>
 </main>
