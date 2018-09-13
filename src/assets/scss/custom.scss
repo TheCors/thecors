@@ -48,8 +48,8 @@ main {
   background-size: cover;
   position: relative;
 
-  &.rooms-bg {
-    background-image: url('/assets/img/rooms.jpg');
+  &.property-bg {
+    background-image: url('/assets/img/property.jpg');
   }
   &.contact-bg {
     background-image: url('/assets/img/contact.jpg');
@@ -57,11 +57,11 @@ main {
   &.garden-bg {
     background-image: url('/assets/img/garden.jpg');
   }
-  &.dining-bg {
-    background-image: url('/assets/img/dining.jpg');
+  &.gallery-bg {
+    background-image: url('/assets/img/gallery.jpg');
   }
-  &.tariff-bg {
-    background-image: url('/assets/img/tariff.jpg');
+  &.book-bg {
+    background-image: url('/assets/img/book.jpg');
   }
 
   .text {
@@ -134,13 +134,10 @@ main {
   }
 }
 
-// &:before {
-//   content: '';
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   bottom: 0;
-//   left: 0;
-//   background-image: linear-gradient(to bottom right, #333, $light-gray);
-//   opacity: .6;
-// }
+.button.alt-text {
+  color: $white;
+
+  &:hover {
+    color: $white;
+  }
+}

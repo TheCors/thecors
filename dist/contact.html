@@ -1,0 +1,331 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Cors Country House</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="assets/img/favicon-16x16.png" sizes="16x16" />
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet"> <style>
+  html {
+    -webkit-transition: background-color 2s;
+    transition: background-color 2s;
+    height: 100%;
+  }
+  body.loading {
+    /* Replace #333 with the background-color of your choice */
+    /* Replace loading.gif with the loading image of your choice */
+    background: #fff url('assets/img/logo-full.png') no-repeat 50% 50%;
+    position: fixed;
+    /* Ensures that the transition only runs in one direction */
+    -webkit-transition: background-color 0;
+    transition: background-color 0;
+  }
+  body {
+    -webkit-transition: opacity 2s ease-in;
+    transition: opacity 2s ease-in;
+  }
+  body.loading .loading-wrapper {
+    /* Make the contents of the body opaque during loading */
+    opacity: 0;
+
+    /* Ensures that the transition only runs in one direction */
+    -webkit-transition: opacity 0;
+    transition: opacity 0;
+  }
+  .pace {
+    -webkit-pointer-events: none;
+    pointer-events: none;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  .pace.pace-inactive .pace-progress {
+    display: none;
+  }
+  .pace .pace-progress {
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 0;
+    height: 5rem;
+    width: 5rem;
+
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    -ms-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+  .pace .pace-progress:after {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: .5rem;
+    content: attr(data-progress-text);
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 100;
+    font-size: 5rem;
+    line-height: 1;
+    text-align: right;
+    color: rgba(2, 221, 0, 0.19999999999999996);
+  }
+</style>
+ <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-DS6V');</script>
+<!-- End Google Tag Manager -->
+
+  <link rel="stylesheet" href="assets/css/app.css">  <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCTlncf1G2GoZuukUDHhC93DQg4-Zc4fLw&extension=.js'></script>
+
+<script>
+  google.maps.event.addDomListener(window, 'load', init);
+  var map;
+  function init() {
+    var mapOptions = {
+      center: new google.maps.LatLng(51.7713513,-4.4644884),
+      zoom: 18,
+      zoomControl: true,
+      zoomControlOptions: {
+        style: google.maps.ZoomControlStyle.SMALL,
+      },
+      disableDoubleClickZoom: true,
+      mapTypeControl: false,
+      scaleControl: false,
+      scrollwheel: false,
+      panControl: false,
+      streetViewControl: false,
+      draggable : false,
+      overviewMapControl: true,
+      overviewMapControlOptions: {
+        opened: false,
+      },
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles: [{"featureType":"administrative","stylers":[{"visibility":"off"}]},{"featureType":"poi","stylers":[{"visibility":"simplified"}]},{"featureType":"road","stylers":[{"visibility":"simplified"}]},{"featureType":"water","stylers":[{"visibility":"simplified"}]},{"featureType":"transit","stylers":[{"visibility":"simplified"}]},{"featureType":"landscape","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"visibility":"off"}]},{"featureType":"road.local","stylers":[{"visibility":"on"}]},{"featureType":"road.highway","elementType":"geometry","stylers":[{"visibility":"on"}]},{"featureType":"water","stylers":[{"color":"#84afa3"},{"lightness":52}]},{"stylers":[{"saturation":-77}]},{"featureType":"road"}],
+    }
+    var mapElement = document.getElementById('cors-map');
+    var map = new google.maps.Map(mapElement, mapOptions);
+    var locations = [
+      ['The Cors Country House', '', '07814 641 977', 'enquiries@greatwelshescapes.com', 'www.thecors.co.uk', 51.771351, -4.464488]
+    ];
+    for (i = 0; i < locations.length; i++) {
+      if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
+      if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
+      if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
+      if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
+      if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
+      marker = new google.maps.Marker({
+        icon: markericon,
+        position: new google.maps.LatLng(locations[i][5], locations[i][6]),
+        map: map,
+        title: locations[i][0],
+        desc: description,
+        tel: telephone,
+        email: email,
+        web: web
+      });
+    if (web.substring(0, 7) != "http://") {
+      link = "http://" + web;
+    } else {
+      link = web;
+    }
+    bindInfoWindow(marker, map, locations[i][0], description, telephone, email, web, link);
+  }
+  function bindInfoWindow(marker, map, title, desc, telephone, email, web, link) {
+    var infoWindowVisible = (function () {
+      var currentlyVisible = false;
+      return function (visible) {
+        if (visible !== undefined) {
+          currentlyVisible = visible;
+        }
+        return currentlyVisible;
+       };
+     }());
+    iw = new google.maps.InfoWindow();
+    google.maps.event.addListener(marker, 'click', function() {
+      if (infoWindowVisible()) {
+        iw.close();
+        infoWindowVisible(false);
+      } else {
+        var html= "<div style='color:#000;background-color:#fff;padding:5px;width:150px;'><h4>"+title+"</h4><p>"+telephone+"<p><a href='mailto:"+email+"' >"+email+"<a><a href='"+link+"'' >"+web+"<a></div>";
+        iw = new google.maps.InfoWindow({content:html});
+        iw.open(map,marker);
+        infoWindowVisible(true);
+      }
+    });
+    google.maps.event.addListener(iw, 'closeclick', function () {
+      infoWindowVisible(false);
+    });
+  }
+}
+</script>
+<style>
+  .gm-style-iw * {
+    display: block;
+    width: 275px;
+  }
+  .gm-style-iw h4, .gm-style-iw p {
+    margin: 0;
+    padding: 0;
+  }
+  .gm-style-iw a {
+    color: #4272db;
+  }
+</style>
+ 
+</head>
+
+<body class="loading">
+  <div class="loading-wrapper">
+     
+    <div id="page-wrap" class="contact">
+      <div class="menu-wrap text-center">
+  <div class="row column">
+    <div class="title-bar text-left" data-responsive-toggle="main-menu" data-hide-for="medium">
+      <div class="float-left">
+        <button class="menu-icon" type="button" data-toggle></button>
+        <div class="title-bar-title">Menu</div>
+      </div>
+      <div class="float-right">
+        <a class="hide-for-medium-up" href="/">
+          <img src="assets/img/logo-transparent-125.png" width="75" />
+        </a>
+      </div>
+    </div>
+
+    <ul class="vertical medium-horizontal menu" id="main-menu" data-animate="hinge-in-from-top hinge-out-from-top">
+      <li ><a href="/">Home</a></li>
+      <li ><a href="/the-property.html">The Property</a></li>
+      <li ><a href="/gallery.html">Gallery</a></li>
+      <li class="hide-for-small-only"><a href="/"><img src="assets/img/logo-transparent-125.png" width="125" /></a></li>
+      <li ><a href="/garden.html">Garden</a></li>
+      <li ><a href="/book.html">Book</a></li>
+      <li class="active"><a href="/contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+</div>
+ <header class="full-width-bg contact-bg">
+  <div class="inner">
+    <h1 class="text">Contact us</h1>
+  </div>
+</header>
+<main>
+  <section class="content row">
+    <div class="small-12 columns text-center">
+      <h1>Contact</h1>
+    </div>
+    <div class="small-12 medium-3 columns">
+      <div class="card highlight">
+        <div class="card-section">
+          <p>
+            The Cors Country House,
+            <br>Newbridge Road,
+            <br>Laugharne,
+            <br>Carmarthenshire,
+            <br>SA33 4SH
+          </p>
+          <p>
+            Phone: 07814 641 977
+            <br><a href="mailto:enquiries@greatwelshescapes.com">Email us</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="small-12 medium-9 columns">
+      <div class="card">
+        <div class="card-section">
+          <h4>Map</h4>
+          <p>
+            Heading from Carmarthen on the A40 towards St Clears you will see Laugharne signposted via a junction off the A40 to St Clears. Turn right on the T junction and head towards Laugharne on the A4066.
+          </p>
+          <p>
+            When you come in to the township, you will pass the Memorial Hall on your right then further along you will go around a sharp bend which leads onto
+            Market Street and you will see The Ferryman Deli on the left, and then The Browns Hotel. Shortly after, you will see The New Three Mariners pub,
+            where you will immediately turn right down the road called Newbridge Road.
+          </p>
+          <p>
+            Follow the road down for approximately 150m go over a bridge and then
+            turn right over a small bridge into the driveway, The Cors Country House is located at the bottom of the drive.
+          </p>
+          <div class="responsive-embed" id="cors-map"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    </div>
+     <footer class="footer">
+  <div class="row text-center">
+    <div class="awards small-12 medium-4 columns">
+      <a href="https://www.airbnb.co.uk/rooms/23448583"><img src="assets/img/airbnb.svg" width="200"></a>    </div>
+    <div class="info small-12 medium-4 columns">
+      <p><strong>For reservations, enquires & information:</strong></p>
+      <p class="footer-links">
+        <a class="facebook" href="https://www.facebook.com/thecors/">
+          <i class="fa fa-2x fa-fw fa-facebook-official" aria-hidden="true"></i>
+        </a>
+        <a class="twitter" href="https://twitter.com/TheCorsCountry">
+          <i class="fa fa-2x fa-fw fa-twitter" aria-hidden="true"></i>
+        </a>
+        <a class="instagram" href="https://www.instagram.com/thecorscountry">
+          <i class="fa fa-2x fa-fw fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a class="tripadvisor" href="https://www.tripadvisor.co.uk/VacationRentalReview-g552054-d14182471-The_Cors_Country_House-Laugharne_Carmarthenshire_Wales.html">
+          <i class="fa fa-2x fa-fw fa-tripadvisor" aria-hidden="true"></i>
+        </a>
+      </p>
+      <ul class="no-bullet">
+        <li>
+          <p>
+            The Cors Country House,
+            <br>Newbridge Road,
+            <br>Laugharne,
+            <br>Carmarthenshire,
+            <br>SA33 4SH
+          </p>
+        </li>
+        <li>Call us: 07814 641 977</li>
+        <li><a href="mailto:enquiries@greatwelshescapes.com">Email us</a></li>
+      </ul>
+    </div>
+    <div class="awards small-12 medium-4 columns">
+      <a href="https://www.airbnb.co.uk/rooms/23448583"><img src="assets/img/airbnb.svg" width="200"></a>    </div>
+  </div>
+  <div class="bottom">
+    <div class="row">
+      <div class="small-12 columns">
+        <p class="float-left"><small><a href="http://chrislusted.co.uk">Website by Chris Lusted</a></small></p>
+        <p class="float-right"><small data-copyright></small></p>
+      </div>
+    </div>
+  </div>
+</footer>
+ <div class="large reveal text-center" id="introModal" data-reveal data-close-on-click="true" data-animation-in="spin-in" data-animation-out="spin-out">
+  <h1>It’s time for a change in 2017….</h1>
+  <p>After over 30 years in the restaurant business, 10 years of the Stable Door Winebar, and 22 years at The Cors Restaurant, Laugharne, it’s time for a change! </p>
+  <p>I want to put the emphasis on the B&B side of the business and get away from the <i>‘fyne dining’</i> and cooking-to-order restaurant side. I’m still going to be open for private parties and functions (10 people or more) and you get the whole place to yourselves.</p>
+  <p>For the B&B’s delicious comfort food is available by arrangement, it will offer a simpler more informal style of dining, think brasserie, wine bar, tapas style food.</p>
+  <p>A big thank you to all my customers who have supported me over many years, and don’t forget you have only to get together 10 people or more for private dining, parties and functions. We will also be open for special events such as the Laugharne Festival Weekend (every April), Valentine’s Day, New Years and garden functions.</p>
+  <p>Brasserie/Bistro food will be available most weekends, please check for opening times.</p>
+  <p>
+    Thank you,<br>
+    Nick Priestland
+  </p>
+
+  <button class="button" data-close aria-label="Close modal" type="button">
+    Close
+  </button>
+</div>
+
+  </div>
+  <script src="assets/js/app.js"></script>
+</body>
+
+</html>

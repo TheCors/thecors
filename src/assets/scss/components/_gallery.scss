@@ -1,4 +1,4 @@
-// .gallery > ul > li a > img {
+// .image-gallery > ul > li a > img {
 //   -webkit-transition: -webkit-transform 0.15s ease 0s;
 //   -moz-transition: -moz-transform 0.15s ease 0s;
 //   -o-transition: -o-transform 0.15s ease 0s;
@@ -16,7 +16,7 @@
 //   max-height: rem-calc(205px);
 // }
 
-.gallery, .image-thumb {
+.image-gallery, .image-thumb {
   position: relative;
   max-height: rem-calc(207px);
   overflow: hidden;
@@ -39,7 +39,7 @@
       transform: scale3d(1.1, 1.1, 1.1);
       max-height: rem-calc(207px);
     }
-    .gallery-overlay {
+    .image-gallery-overlay {
       background-color: rgba(0, 0, 0, 0.2);
 
       .overlay-item {
@@ -47,7 +47,7 @@
       }
     }
   }
-  .gallery-overlay {
+  .image-gallery-overlay {
     bottom: 0;
     color: $white;
     left: 0;
