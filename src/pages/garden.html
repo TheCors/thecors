@@ -5,96 +5,28 @@
   </div>
 </header>
 <main>
-  <section class="content row">
+  <section class="content row text-center">
     <div class="small-12 columns">
       <h1>Garden</h1>
-      <p>Translated from Welsh The Cors means bog, which is what Nick Priestland had to work with when he created his beautiful landscaped garden set in a wooded valley bordering the Corran river. Consisting of approximately 2 and half acres, this well designed large bog garden has ponds, gunnera, bamboos and tree-ferns. It is an exceptional, elegant and artistic garden with unusual architectural and exotic planting, dotted with sculptures. </p>
+      <p>Translated from Welsh The Cors means bog, which is what Nick Priestland had to work with when he created his beautiful landscaped garden set in a wooded valley bordering the Corran river. Consisting of approximately 2 and half acres, this well designed large bog garden has ponds, gunnera, bamboos and tree-ferns. It is an exceptional, elegant and artistic garden with unusual architectural and exotic planting, dotted with sculptures.</p>
 
-      <p>“  I started from complete wilderness in 1994, not really knowing anything about gardening and plants, and thinking only of a ‘front garden’. Mature trees on the borders of the garden make it a fairly inclusive style of garden. Problems included marsh, bog and flooding. All of these I've tried to turn to advantage and the result is a garden centered on my home, arising out of this particular and unique spot, belong to its rural surroundings. Modern, yet attached to the past, naturalistic in its planting as well as exotic and stylized in parts”, Nick Priestland. </p>
+      <p>“I started from complete wilderness in 1994, not really knowing anything about gardening and plants, and thinking only of a ‘front garden’. Mature trees on the borders of the garden make it a fairly inclusive style of garden. Problems included marsh, bog and flooding. All of these I've tried to turn to advantage and the result is a garden centered on my home, arising out of this particular and unique spot, belong to its rural surroundings. Modern, yet attached to the past, naturalistic in its planting as well as exotic and stylized in parts”, Nick Priestland.</p>
     </div>
   </section>
   <section class="content secondary row expanded">
-    <div class="row small-up-2 large-up-4 image-gallery">
-      <div class="column column-block gallery">
-        <div class="image-thumb thumbnail" data-src="assets/img/slides/garden/garden-1.jpg">
-          <img src="assets/img/slides/garden/thumbs/garden-1.jpg" alt="The Cors Garden">
-          <div class="gallery-overlay">
-            <div class="overlay-item">
-              <i class="fa fa-2x fa-search-plus"></i>
+    <div class="row small-up-2 large-up-4 image-gallery-content">
+        {{#repeat 8}}
+        <div class="column column-block image-gallery">
+          <div class="image-thumb thumbnail" data-src="assets/img/slides/garden/the_cors_garden_{{@index}}.jpg">
+            <img src="assets/img/slides/garden/thumbs/the_cors_garden_{{@index}}.jpg" alt="The Cors Restaurant">
+            <div class="image-gallery-overlay">
+              <div class="overlay-item">
+                <i class="fa fa-2x fa-search-plus"></i>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="column column-block gallery">
-        <div class="image-thumb thumbnail" data-src="assets/img/slides/garden/garden-2.jpg">
-          <img src="assets/img/slides/garden/thumbs/garden-2.jpg" alt="The Cors Garden">
-          <div class="gallery-overlay">
-            <div class="overlay-item">
-              <i class="fa fa-2x fa-search-plus"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column column-block gallery">
-        <div class="image-thumb thumbnail" data-src="assets/img/slides/garden/garden-3.jpg">
-          <img src="assets/img/slides/garden/thumbs/garden-3.jpg" alt="The Cors Garden">
-          <div class="gallery-overlay">
-            <div class="overlay-item">
-              <i class="fa fa-2x fa-search-plus"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column column-block gallery">
-        <div class="image-thumb thumbnail" data-src="assets/img/slides/garden/garden-4.jpg">
-          <img src="assets/img/slides/garden/thumbs/garden-4.jpg" alt="The Cors Garden">
-          <div class="gallery-overlay">
-            <div class="overlay-item">
-              <i class="fa fa-2x fa-search-plus"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column column-block gallery">
-        <div class="image-thumb thumbnail" data-src="assets/img/slides/garden/garden-5.jpg">
-          <img src="assets/img/slides/garden/thumbs/garden-5.jpg" alt="The Cors Garden">
-          <div class="gallery-overlay">
-            <div class="overlay-item">
-              <i class="fa fa-2x fa-search-plus"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column column-block gallery">
-        <div class="image-thumb thumbnail" data-src="assets/img/slides/garden/garden-6.jpg">
-          <img src="assets/img/slides/garden/thumbs/garden-6.jpg" alt="The Cors Garden">
-          <div class="gallery-overlay">
-            <div class="overlay-item">
-              <i class="fa fa-2x fa-search-plus"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column column-block gallery">
-        <div class="image-thumb thumbnail" data-src="assets/img/slides/garden/garden-7.jpg">
-          <img src="assets/img/slides/garden/thumbs/garden-7.jpg" alt="The Cors Garden">
-          <div class="gallery-overlay">
-            <div class="overlay-item">
-              <i class="fa fa-2x fa-search-plus"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="column column-block gallery">
-        <div class="image-thumb thumbnail" data-src="assets/img/slides/garden/garden-8.jpg">
-          <img src="assets/img/slides/garden/thumbs/garden-8.jpg" alt="The Cors Garden">
-          <div class="gallery-overlay">
-            <div class="overlay-item">
-              <i class="fa fa-2x fa-search-plus"></i>
-            </div>
-          </div>
-        </div>
-      </div>
+      {{/repeat}}
     </div>
   </section>
 </main>
